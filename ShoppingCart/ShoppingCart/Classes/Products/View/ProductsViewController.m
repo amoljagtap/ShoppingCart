@@ -73,13 +73,22 @@ NSString *kCollectionViewCell = @"CollectionViewCell";
 }
 
 -(void)addProductToCart:(Product *)product{
-
     [self.presenter addProductToCart:product];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Product added to Cart." preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:true completion:nil];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 -(void)addProductToWishlist:(Product *)product{
-
     [self.presenter addProductToWishlist:product];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"Product added in Wishlist." preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:true completion:nil];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
