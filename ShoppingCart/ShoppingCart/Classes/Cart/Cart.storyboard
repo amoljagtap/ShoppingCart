@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="33Z-WC-w3x">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cart-->
+        <scene sceneID="Fv4-Fw-9aU">
+            <objects>
+                <navigationController id="33Z-WC-w3x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="3" title="Cart" id="Zuc-Z9-tgO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oGp-L7-ssw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ODZ-4W-Ck1" kind="relationship" relationship="rootViewController" id="c0i-NN-21X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eed-CG-PNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-353" y="23"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="pX8-Cd-VXK">
+            <objects>
+                <viewController storyboardIdentifier="CartViewController" id="ODZ-4W-Ck1" customClass="CartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v6S-nl-4h7"/>
+                        <viewControllerLayoutGuide type="bottom" id="OO9-jw-ZC2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wyC-tX-JDv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-S9-h9j">
+                                <rect key="frame" x="0.0" y="65" width="375" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfG-RC-DeN">
+                                        <rect key="frame" x="18" y="14" width="81" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="sfG-RC-DeN" firstAttribute="leading" secondItem="Wup-S9-h9j" secondAttribute="leading" constant="18" id="FPq-jC-wXc"/>
+                                    <constraint firstItem="sfG-RC-DeN" firstAttribute="top" secondItem="Wup-S9-h9j" secondAttribute="top" constant="14" id="FeZ-Y8-G28"/>
+                                    <constraint firstAttribute="height" constant="49" id="chZ-KK-NwR"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ic-T4-aFE">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ODZ-4W-Ck1" id="a4Z-k4-xHm"/>
+                                    <outlet property="delegate" destination="ODZ-4W-Ck1" id="IMg-lb-INJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wup-S9-h9j" firstAttribute="leading" secondItem="wyC-tX-JDv" secondAttribute="leadingMargin" constant="-16" id="DCZ-7D-R9f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wup-S9-h9j" secondAttribute="trailing" constant="-16" id="IjB-Jt-A4O"/>
+                            <constraint firstItem="Wup-S9-h9j" firstAttribute="top" secondItem="v6S-nl-4h7" secondAttribute="bottom" constant="1" id="cWY-6v-RFu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3ic-T4-aFE" secondAttribute="trailing" constant="-16" id="mcG-9i-cTv"/>
+                            <constraint firstItem="OO9-jw-ZC2" firstAttribute="top" secondItem="3ic-T4-aFE" secondAttribute="bottom" constant="-49" id="uVV-Wu-Z8P"/>
+                            <constraint firstItem="3ic-T4-aFE" firstAttribute="leading" secondItem="wyC-tX-JDv" secondAttribute="leadingMargin" constant="-16" id="uo6-dx-fef"/>
+                            <constraint firstItem="3ic-T4-aFE" firstAttribute="top" secondItem="Wup-S9-h9j" secondAttribute="bottom" constant="-3" id="zwI-Yr-PbT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3vW-4h-7f1"/>
+                    <connections>
+                        <outlet property="tableView" destination="3ic-T4-aFE" id="cb3-Ql-RhG"/>
+                        <outlet property="totalPriceLabel" destination="sfG-RC-DeN" id="CqE-oE-5el"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXE-LK-Wd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432.80000000000001" y="50.824587706146929"/>
+        </scene>
+    </scenes>
+</document>
